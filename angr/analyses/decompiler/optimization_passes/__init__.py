@@ -12,6 +12,7 @@ from .mod_simplifier import ModSimplifier
 from .eager_returns import EagerReturnsSimplifier
 from .const_derefs import ConstantDereferencesSimplifier
 from .register_save_area_simplifier import RegisterSaveAreaSimplifier
+from .block_merger import BlockMerger
 
 
 _all_optimization_passes = [
@@ -23,6 +24,7 @@ _all_optimization_passes = [
     (MultiSimplifier, True),
     (ModSimplifier, True),
     (ConstantDereferencesSimplifier, True),
+    (BlockMerger, True)
 ]
 
 def get_optimization_passes(arch, platform):
